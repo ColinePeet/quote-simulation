@@ -10,6 +10,7 @@ const store = useStore();
 let loading = ref(true);
 
 onMounted(async () => {
+  store.commit("RESET_STATE")
   await store.dispatch("fetchQuote");
   loading.value = false;
 });
@@ -20,7 +21,7 @@ onMounted(async () => {
     <div v-if="store.state.quote">
       <div class="englobe-coverage-deductible"></div>
       <h1>Votre devis RC Pro</h1>
-      {{store.state.quote}}
+      <!-- {{store.state.quote}} -->
       <div class="englobe-covers">
         <h3>Couvertures de base</h3>
         <CoverElement
@@ -40,6 +41,9 @@ onMounted(async () => {
           :element="cover"
         />
       </div>
+
+      <h5>total </h5>
+      {{store.state.selected_covers}}
     </div>
 
     <LoaderElement v-if="loading" />

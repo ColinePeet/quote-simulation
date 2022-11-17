@@ -5,19 +5,25 @@ import advice from '@/utils/mocks/advice.mock.json'
 
 export default createStore({
   state: {
-    quote: null
+    quote: null,
+    selected_covers: []
   },
   getters: {
     covers(state) {
       if (state.quote) {
         covers.map(cover => {
           cover.price = state.quote.grossPremiums[cover.key]
-          if (advice.adviced_forumula.covers.includes(cover.key)) cover.selected = true
+          if (advice.adviced_forumula.covers.includes(cover.key)) {
+            cover.selected = true
+            state.selected_covers.push(cover.key)
+          }
         })
         return covers
       }
-
-    }
+    },
+    // totalPrice(state) {
+    //   state.
+    // }
   },
   actions: {
     async fetchQuote({ commit }) {
@@ -55,7 +61,19 @@ export default createStore({
   mutations: {
     SET_QUOTE(state, data) {
       state.quote = data
-      // console.log(state.quote)
+    },
+    SET_FORMULA(state, cover) {
+      if(state.selected_covers.includes(cover)) {
+        const index = state.selected_covers.findIndex(e => e === cover)
+        state.selected_covers.splice(index, 1)
+      } else {
+        console.log('add', cover)
+        state.selected_covers.push(cover)
+      }
+    },
+    RESET_STATE(state) {
+      state.quote = null 
+      state.selected_covers = []
     }
   },
 },
