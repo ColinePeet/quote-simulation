@@ -21,9 +21,15 @@ export default createStore({
         return covers
       }
     },
-    // totalPrice(state) {
-    //   state.
-    // }
+    totalPrice(state) {
+      if (state.quote) {
+        let total = 0
+        state.selected_covers.forEach(cover => {
+          total += state.quote.grossPremiums[cover]
+        })
+        return  Math.round(total * 10) / 10
+      }
+    }
   },
   actions: {
     async fetchQuote({ commit }) {
@@ -63,7 +69,7 @@ export default createStore({
       state.quote = data
     },
     SET_FORMULA(state, cover) {
-      if(state.selected_covers.includes(cover)) {
+      if (state.selected_covers.includes(cover)) {
         const index = state.selected_covers.findIndex(e => e === cover)
         state.selected_covers.splice(index, 1)
       } else {
@@ -72,7 +78,7 @@ export default createStore({
       }
     },
     RESET_STATE(state) {
-      state.quote = null 
+      state.quote = null
       state.selected_covers = []
     }
   },

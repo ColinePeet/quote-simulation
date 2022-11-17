@@ -42,7 +42,7 @@ onMounted(async () => {
         />
       </div>
 
-      <h5>total </h5>
+      <h5>total : {{store.getters.totalPrice}}€</h5>
       {{store.state.selected_covers}}
     </div>
 
