@@ -8,8 +8,25 @@
  - titles
  - p
  - button / call to action
+ - loader
 */
 
 *{
    font-family: 'Gellix', sans-serif;
+}
+
+h1{
+
+}
+
+h2{
+   font-size: 1.3em;
+   font-weight: 600;
+}
+
+
+#loader{
+   color: $green_primary;
+   text-align: center;
+   width: 100%;
 }

@@ -8,16 +8,113 @@
  - global template
  - header
  - user profile 
- - advice modal
+ - quote simulation
+ - advice simulation
 */
 
 
 //* header
-#header{
+#header {
     background-color: white;
     box-shadow: 1px 5px 15px rgba($color: #000000, $alpha: .05);
     position: sticky;
-    padding: 20px;
+    height: 62px;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+//* global template
+#template {
+    display: grid;
+    grid-template-columns: 350px auto 340px;
+}
+
+//* user profile
+#user-profile {
+    background-color: $green_primary;
+    color: white;
+    padding: 25px;
+    min-height: calc(100vh - 62px);
+
+    h2 {
+        text-align: center;
+        ;
+    }
+}
+
+//* advice simulation
+#advice {
+    display: flex;
+    align-items: center;
+
+    .modal {
+        background-color: $green_secondary;
+        color: $green_primary;
+        padding: 25px;
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+    }
+
+    .box {
+        background-color: white;
+        padding: 30px 15px 20px 15px;
+        border-radius: 8px;
+        position: relative;
+        margin-top: 45px;
+    }
+
+    .picture {
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        position: absolute;
+        top: -35px;
+        right: calc(50% - 25px);
+        overflow: hidden;
+        border: 1px solid white;
+        box-shadow: 1px 5px 10px rgba($color: #000000, $alpha: .05);
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    h2 {
+        text-align: center;
+        margin: 0;
+    }
+
+    p {
+        font-weight: 300;
+        font-size: .95em;
+    }
+
+    span {
+        font-weight: 200;
+        font-size: .95em;
+    }
+}
+
+
+//* quote simulation
+#quote-simulation{
+    padding: 20px;
+}
+
+.cover {
+    margin: 5px 0;
+    .head {
+        padding: 15px;
+        border-radius: 8px;
+        p{
+            margin: 0;
+        }
+        background-color: #eaefff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }

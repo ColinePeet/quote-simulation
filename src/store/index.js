@@ -1,14 +1,24 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+import covers from '@/utils/mocks/covers.mock.json'
 
 export default createStore({
   state: {
     quote: null
   },
   getters: {
+    covers(state) {
+      if (state.quote) {
+        covers.map(cover => {
+          cover.price = state.quote.grossPremiums[cover.key]
+        })
+        return covers
+      }
+
+    }
   },
   actions: {
-    async fetchQuote({commit}) {
+    async fetchQuote({ commit }) {
       try {
         const config = {
           method: 'POST',
@@ -28,11 +38,11 @@ export default createStore({
 
         const response = await axios(config)
         if (response.data) {
-          console.log(response.data)
+          // console.log(response.data)
           commit('SET_QUOTE', response.data.data)
-        } 
+        }
         // console.log(response)
-       
+
 
       } catch (error) {
         console.log(error)
@@ -43,7 +53,7 @@ export default createStore({
   mutations: {
     SET_QUOTE(state, data) {
       state.quote = data
-      console.log(state.quote)
+      // console.log(state.quote)
     }
   },
 },

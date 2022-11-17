@@ -1,0 +1,38 @@
+[
+    {
+        "key" : "professionalIndemnity",
+        "name" : "Indemnités professionnelles",
+        "description": "lorem ipsum",
+        "type" : "main",
+        "selected": false
+    },
+    {
+        "key" : "publicLiability",
+        "name" : "Responsabilité civile",
+        "description": "lorem ipsum",
+        "type" : "main",
+        "selected": false
+    },
+    {
+        "key" : "afterDelivery",
+        "name" : "Après livraison",
+        "description": "lorem ipsum",
+        "type" : "additional",
+        "selected": false
+    },
+    {
+        "key" : "entrustedObjects",
+        "name" : "Objets confiés",
+        "description": "lorem ipsum",
+        "type" : "additional",
+        "selected": false
+    },
+    {
+        "key" : "legalExpenses",
+        "name" : "Frais judiciaires",
+        "description": "lorem ipsum",
+        "type" : "additional",
+        "selected": false
+    }
+
+]

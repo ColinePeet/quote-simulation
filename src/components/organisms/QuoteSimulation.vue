@@ -1,7 +1,31 @@
 <script setup>
+import LoaderElement from "@/components/atoms/LoaderElement";
+import CoverElement from "@/components/atoms/CoverElement";
+import { onMounted, ref } from "vue";
+import { useStore } from "vuex";
 
+const store = useStore();
+
+// const covers = 
+let loading = ref(true);
+
+onMounted(async () => {
+  await store.dispatch("fetchQuote");
+  loading.value = false;
+});
 </script>
 
 <template>
+  <div id="quote-simulation">
+    <div v-if="store.state.quote">
+      <div class="englobe-coverage-deductible"></div>
+      <h1>Votre devis RC Pro</h1>
+      <div class="englobe-covers">
+        <h3>Couvertures de base</h3>
+        <CoverElement v-for="cover in store.getters.covers" :key="cover" :element="cover" />
+      </div>
+    </div>
 
+    <LoaderElement v-if="loading" />
+  </div>
 </template>
