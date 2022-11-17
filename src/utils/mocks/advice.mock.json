@@ -1,0 +1,8 @@
+{
+    "quote": "Lorem ipsum dolor",
+    "adviced_forumula": {
+        "deductibleFormula" : "SMALL",
+        "coverageCeilingFormula" : "LARGE",
+        "covers": ["professionalIndemnity", "legalExpenses"]
+    }
+}

@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
 import covers from '@/utils/mocks/covers.mock.json'
+import advice from '@/utils/mocks/advice.mock.json'
 
 export default createStore({
   state: {
@@ -11,6 +12,7 @@ export default createStore({
       if (state.quote) {
         covers.map(cover => {
           cover.price = state.quote.grossPremiums[cover.key]
+          if (advice.adviced_forumula.covers.includes(cover.key)) cover.selected = true
         })
         return covers
       }
