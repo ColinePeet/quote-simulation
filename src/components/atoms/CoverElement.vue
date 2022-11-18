@@ -4,23 +4,37 @@ import { useStore } from "vuex";
 
 const store = useStore();
 const props = defineProps(["element"]);
-const selected = ref(props.element.selected)
+const selected = ref(props.element.selected);
+const showDescription = ref(false);
 
+function selectCover() {
+  selected.value = !selected.value
+}
 
 watch(selected, () => {
-    store.commit("SET_SELECTED_COVERS", props.element.key)
-})
+  store.commit("SET_SELECTED_COVERS", props.element.key);
+});
 </script>
 
 <template>
-  <div class="cover">
-    <div class="head">
-      <p>{{props.element.name}}</p>
-      <div>
-        <span class="price">{{props.element.price}}€</span>
+  <div class="cover" :class="{ active: selected }">
+    <div class="head" @click="showDescription = !showDescription">
+      <p>
+        {{ props.element.name }}
+        <i class="material-icons" >{{
+          showDescription ? "arrow_drop_up" : "arrow_drop_down"
+        }}</i>
+      </p>
+      <div @click="selectCover()" class="select">
+        <span class="price">{{ props.element.price }}€</span>
         <input type="checkbox" v-model="selected" />
       </div>
     </div>
-    <!-- <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo tenetur enim asperiores cum libero similique molestiae, incidunt blanditiis iure quia sapiente voluptas obcaecati beatae veniam, excepturi neque doloremque? Ex, nihil.</p> -->
+    <p
+      class="description"
+      v-html="props.element.description"
+      v-if="showDescription"
+    ></p>
+    
   </div>
 </template>

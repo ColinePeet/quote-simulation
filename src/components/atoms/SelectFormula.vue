@@ -26,9 +26,9 @@ const selectFormula = function (key) {
 </script>
 
 <template>
-  <div class="flex">
+  <div class="flex control">
     <label>{{ props.label }}:</label>
-    <div class="formulas-switch">
+    <div class="formula-switch">
       <div
         class="formula"
         v-for="formula in formulas"

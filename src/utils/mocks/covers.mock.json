@@ -2,35 +2,35 @@
     {
         "key" : "professionalIndemnity",
         "name" : "Indemnités professionnelles",
-        "description": "lorem ipsum",
+        "description": "Les indemnités professionnelles couvrent lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquid, id exercitationem perspiciatis vero eligendi voluptas sint fugit alias unde harum nemo.",
         "type" : "main",
         "selected": false
     },
     {
         "key" : "publicLiability",
         "name" : "Responsabilité civile",
-        "description": "lorem ipsum",
+        "description": "La responsabilité civile couvre lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquid, id exercitationem perspiciatis vero eligendi voluptas sint fugit alias unde harum nemo.",
         "type" : "main",
         "selected": false
     },
     {
         "key" : "afterDelivery",
         "name" : "Après livraison",
-        "description": "lorem ipsum",
+        "description": "La couverture après livraison lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquid, id exercitationem perspiciatis vero eligendi voluptas sint fugit alias unde harum nemo.",
         "type" : "additional",
         "selected": false
     },
     {
         "key" : "entrustedObjects",
         "name" : "Objets confiés",
-        "description": "lorem ipsum",
+        "description": "La couverture objets confiés lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquid, id exercitationem perspiciatis vero eligendi voluptas sint fugit alias unde harum nemo.",
         "type" : "additional",
         "selected": false
     },
     {
         "key" : "legalExpenses",
         "name" : "Frais judiciaires",
-        "description": "lorem ipsum",
+        "description": "La couverture frais judiciaires lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquid, id exercitationem perspiciatis vero eligendi voluptas sint fugit alias unde harum nemo.",
         "type" : "additional",
         "selected": false
     }
