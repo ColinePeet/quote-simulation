@@ -18,8 +18,8 @@ watch(selected, () => {
 
 <template>
   <div class="cover" :class="{ active: selected }">
-    <div class="head" @click="showDescription = !showDescription">
-      <p>
+    <div class="head">
+      <p @click="showDescription = !showDescription">
         {{ props.element.name }}
         <i class="material-icons" >{{
           showDescription ? "arrow_drop_up" : "arrow_drop_down"

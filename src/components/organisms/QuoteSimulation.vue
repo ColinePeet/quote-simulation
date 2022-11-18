@@ -35,12 +35,12 @@ const fetchQuote = async function () {
     payload.coverageCeilingFormula = coverageCeilingFormula.value;
 
   loading.value = true;
-  error.value = false
+  error.value = false;
   store.commit("RESET_STATE");
-  
+
   const response = await store.dispatch("fetchQuote", payload);
 
-  if (response.error) error.value = true
+  if (response.error) error.value = true;
   loading.value = false;
 };
 
@@ -53,11 +53,20 @@ onMounted(() => {
   <div id="quote-simulation">
     <EnglobeCoverageDeductible />
 
-    <div v-if="store.state.quote">
+    <div v-if="store.state.quote" class="englobe-quote">
       <h1>Votre devis RC Pro</h1>
       <EnglobeCovers />
 
-      <h5>total : {{ store.getters.totalPrice }}€</h5>
+      <div id="total">
+        <h4>Votre total:</h4>
+        <span class="price">{{ store.getters.totalPrice }}€</span>
+      </div>
+
+      <button>
+        Me souscrire à l'assurance
+        <i class="material-icons">play_arrow
+</i>
+      </button>
     </div>
 
     <LoaderElement v-if="loading" />

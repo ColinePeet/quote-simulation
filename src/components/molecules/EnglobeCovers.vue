@@ -8,7 +8,7 @@ const store = useStore();
 
 <template>
   <div class="englobe-covers">
-    <h3>Couvertures de base</h3>
+    <h4>Couvertures de base</h4>
     <CoverElement
       v-for="cover in store.getters.covers.filter(
         (cover) => cover.type === 'main'
@@ -17,7 +17,7 @@ const store = useStore();
       :element="cover"
     />
 
-    <h3>Couvertures additionnelles</h3>
+    <h4>Couvertures additionnelles</h4>
     <CoverElement
       v-for="cover in store.getters.covers.filter(
         (cover) => cover.type === 'additional'
