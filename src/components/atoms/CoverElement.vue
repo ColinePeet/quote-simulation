@@ -8,7 +8,7 @@ const selected = ref(props.element.selected)
 
 
 watch(selected, () => {
-    store.commit("SET_FORMULA", props.element.key)
+    store.commit("SET_SELECTED_COVERS", props.element.key)
 })
 </script>
 

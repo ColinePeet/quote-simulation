@@ -6,7 +6,9 @@ import advice from '@/utils/mocks/advice.mock.json'
 export default createStore({
   state: {
     quote: null,
-    selected_covers: []
+    selected_covers: [],
+    deductibleFormula: advice.adviced_forumula.deductibleFormula,
+    coverageCeilingFormula: advice.adviced_forumula.coverageCeilingFormula
   },
   getters: {
     covers(state) {
@@ -29,7 +31,7 @@ export default createStore({
         })
         return  Math.round(total * 10) / 10
       }
-    }
+    },
   },
   actions: {
     async fetchQuote({ commit }) {
@@ -68,7 +70,7 @@ export default createStore({
     SET_QUOTE(state, data) {
       state.quote = data
     },
-    SET_FORMULA(state, cover) {
+    SET_SELECTED_COVERS(state, cover) {
       if (state.selected_covers.includes(cover)) {
         const index = state.selected_covers.findIndex(e => e === cover)
         state.selected_covers.splice(index, 1)
@@ -77,9 +79,14 @@ export default createStore({
         state.selected_covers.push(cover)
       }
     },
+    SET_FORMULA(state, formula) {
+      state[formula.name] = formula.key
+    },
     RESET_STATE(state) {
       state.quote = null
       state.selected_covers = []
+      // deductible_formula = null
+      // coverage_ceiling_formula = null
     }
   },
 },
