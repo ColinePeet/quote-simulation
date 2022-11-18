@@ -34,7 +34,7 @@ export default createStore({
     },
   },
   actions: {
-    async fetchQuote({ commit }) {
+    async fetchQuote({ commit }, payload) {
       try {
         const config = {
           method: 'POST',
@@ -43,16 +43,11 @@ export default createStore({
             'X-Api-Key': 'fABF1NGkfn5fpHuJHrbvG3niQX6A1CO53ftF9ASD',
             'Content-Type': 'application/json'
           },
-          data: {
-            "annualRevenue": 80000,
-            "enterpriseNumber": "0649885171",
-            "legalName": "example SA",
-            "naturalPerson": true,
-            "nacebelCodes": ["62010", "62020", "62030", "62090", "63110"]
-          }
+          data: payload
         }
 
         const response = await axios(config)
+        console.log(response)
         if (response.data) {
           // console.log(response.data)
           commit('SET_QUOTE', response.data.data)
@@ -85,8 +80,6 @@ export default createStore({
     RESET_STATE(state) {
       state.quote = null
       state.selected_covers = []
-      // deductible_formula = null
-      // coverage_ceiling_formula = null
     }
   },
 },

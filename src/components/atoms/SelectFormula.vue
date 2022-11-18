@@ -6,18 +6,23 @@ const store = useStore();
 const props = defineProps(["label", "formula"]);
 
 const formulas = ref([
-  { name: "Bas", key: "SMALL" },
-  { name: "Moyen", key: "MEDIUM" },
-  { name: "Élevé", key: "LARGE" },
+  { name: "Bas", key: "small" },
+  { name: "Élevé", key: "large" },
 ]);
 
-const selectFormula = function(key){
-  console.log(key)
+if (props.formula === "deductibleFormula")
+  formulas.value = [
+    { name: "Bas", key: "small" },
+    { name: "Moyen", key: "medium" },
+    { name: "Élevé", key: "large" },
+  ];
+
+const selectFormula = function (key) {
   store.commit("SET_FORMULA", {
-    'name': props.formula,
-    'key': key
-  })
-}
+    name: props.formula,
+    key: key,
+  });
+};
 </script>
 
 <template>
