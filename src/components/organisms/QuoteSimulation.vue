@@ -20,17 +20,14 @@ const coverageCeilingFormula = computed(() => {
   return store.state.coverageCeilingFormula; // value computed used for the watch
 });
 
-
-
-//* fetch quote REQUEST 
+//* fetch quote REQUEST
 const fetchQuote = async function () {
   let payload = { ...user }; // copy of user
-  
+
   if (deductibleFormula.value)
     payload.deductibleFormula = deductibleFormula.value; // add deductible formula to payload if a value is set
   if (coverageCeilingFormula.value)
     payload.coverageCeilingFormula = coverageCeilingFormula.value; // add coverage ceiling formula to payload if a value is set
-
 
   loading.value = true; // reset loader
   error.value = false; // reset error
@@ -39,21 +36,18 @@ const fetchQuote = async function () {
   const response = await store.dispatch("fetchQuote", payload); // request
   loading.value = false;
 
-  if (response.error) error.value = true; // handling error on request 
+  if (response.error) error.value = true; // handling error on request
 };
-
 
 //* request if coverage ceiling formula has change
 watch(deductibleFormula, () => {
-  fetchQuote(); 
+  fetchQuote();
 });
-
 
 //* request if coverage ceiling formula has change
 watch(coverageCeilingFormula, () => {
   fetchQuote();
 });
-
 
 //* first request when component is mounted
 onMounted(() => {
@@ -70,9 +64,10 @@ onMounted(() => {
       <EnglobeCovers />
 
       <TotalPrice />
-
-      <button>Me souscrire à l'assurance<i class="material-icons">play_arrow</i></button>
     </div>
+    <button v-if="store.state.quote">
+      Me souscrire à l'assurance<i class="material-icons">play_arrow</i>
+    </button>
 
     <LoaderElement v-if="loading" />
     <ErrorRequest v-if="error" />

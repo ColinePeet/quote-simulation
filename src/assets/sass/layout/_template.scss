@@ -145,15 +145,13 @@
 //* quote simulation
 #quote-simulation {
     padding: 30px;
-    .englobe-quote{
-        button{
-            display: block;
-            margin-left: auto;
-            i{
-                font-size: 14px;
-                transform: translateY(2px);
-                margin-left: 5px;
-            }
+    button{
+        display: block;
+        margin-left: auto;
+        i{
+            font-size: 14px;
+            transform: translateY(2px);
+            margin-left: 5px;
         }
     }
 }
