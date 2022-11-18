@@ -1,6 +1,7 @@
 <script setup>
 import user from "@/utils/mocks/user.mock.json";
 import LoaderElement from "@/components/atoms/LoaderElement";
+import ErrorRequest from "@/components/atoms/ErrorRequest";
 import EnglobeCovers from "@/components/molecules/EnglobeCovers";
 import EnglobeCoverageDeductible from "@/components/molecules/EnglobeCoverageDeductible";
 import { onMounted, ref, watch, computed } from "vue";
@@ -9,6 +10,7 @@ import { useStore } from "vuex";
 const store = useStore();
 
 let loading = ref(true);
+let error = ref(false);
 
 const deductibleFormula = computed(() => {
   return store.state.deductibleFormula;
@@ -33,8 +35,12 @@ const fetchQuote = async function () {
     payload.coverageCeilingFormula = coverageCeilingFormula.value;
 
   loading.value = true;
+  error.value = false
   store.commit("RESET_STATE");
-  await store.dispatch("fetchQuote", payload);
+  
+  const response = await store.dispatch("fetchQuote", payload);
+
+  if (response.error) error.value = true
   loading.value = false;
 };
 
@@ -52,9 +58,9 @@ onMounted(() => {
       <EnglobeCovers />
 
       <h5>total : {{ store.getters.totalPrice }}€</h5>
-      {{ store.state.selected_covers }}
     </div>
 
     <LoaderElement v-if="loading" />
+    <ErrorRequest v-if="error" />
   </div>
 </template>

@@ -14,7 +14,6 @@ watch(selected, () => {
 
 <template>
   <div class="cover">
-      {{selected}}
     <div class="head">
       <p>{{props.element.name}}</p>
       <div>

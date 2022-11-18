@@ -29,7 +29,7 @@ export default createStore({
         state.selected_covers.forEach(cover => {
           total += state.quote.grossPremiums[cover]
         })
-        return  Math.round(total * 10) / 10
+        return Math.round(total * 10) / 10
       }
     },
   },
@@ -47,16 +47,14 @@ export default createStore({
         }
 
         const response = await axios(config)
-        console.log(response)
         if (response.data) {
-          // console.log(response.data)
           commit('SET_QUOTE', response.data.data)
         }
-        // console.log(response)
-
+        return response
 
       } catch (error) {
         console.log(error)
+        return { error: true }
       }
 
     },
