@@ -1,9 +1,7 @@
 <script setup>
 import user from "@/utils/mocks/user.mock.json";
 
-//* todo later :
-// - dynamic form
-//*
+//* todo later : dynamic form
 </script>
 
 <template>
@@ -14,14 +12,11 @@ import user from "@/utils/mocks/user.mock.json";
       <label>Vos revenus annuels:</label>
       <input type="text" v-model="user.annualRevenue" disabled />
 
-
       <label>Le numéro de votre entreprise:</label>
       <input type="text" v-model="user.enterpriseNumber" disabled />
 
-
       <label>Le nom de votre entreprise:</label>
       <input type="text" v-model="user.legalName" disabled />
-
 
       <label>Êtes-vous une personne morale ?</label>
       <div class="checkbox-field">
@@ -43,7 +38,6 @@ import user from "@/utils/mocks/user.mock.json";
         />
         <label for="false">Non, je suis une personne juridique</label>
       </div>
-
 
       <label>Vos codes NACE-BEL:</label>
       <div class="flex">

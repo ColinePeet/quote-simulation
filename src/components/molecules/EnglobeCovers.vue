@@ -3,7 +3,6 @@ import CoverElement from "@/components/atoms/CoverElement";
 import { useStore } from "vuex";
 
 const store = useStore();
-
 </script>
 
 <template>

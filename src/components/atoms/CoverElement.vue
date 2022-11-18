@@ -8,11 +8,11 @@ const selected = ref(props.element.selected);
 const showDescription = ref(false);
 
 function selectCover() {
-  selected.value = !selected.value
+  selected.value = !selected.value // change selected value
 }
 
 watch(selected, () => {
-  store.commit("SET_SELECTED_COVERS", props.element.key);
+  store.commit("SET_SELECTED_COVERS", props.element.key); // mutation to set the cover selected/unselected
 });
 </script>
 

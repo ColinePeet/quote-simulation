@@ -21,7 +21,7 @@ const selectFormula = function (key) {
   store.commit("SET_FORMULA", {
     name: props.formula,
     key: key,
-  });
+  }); // mutation to set the formula selected
 };
 </script>
 

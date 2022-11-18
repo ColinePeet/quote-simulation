@@ -46,12 +46,17 @@ button {
     }
 }
 
+
+.flex {
+    display: flex;
+}
+
+
 .loader {
     color: $green_primary;
     text-align: center;
     width: 100%;
     margin-top: 15vh;
-
     .dot {
         display: inline-block;
         width: 8px;
@@ -60,19 +65,45 @@ button {
         background: #02504B;
         margin: 5px;
     }
-
     .dot1 {
         animation: ScaleInOut 0.6s ease-in-out 0.2s infinite alternate;
     }
-
     .dot2 {
         animation: ScaleInOut 0.6s ease-in-out 0.4s infinite alternate;
     }
-
     .dot3 {
         animation: ScaleInOut 0.6s ease-in-out 0.6s infinite alternate;
     }
 }
+
+.error {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    img {
+        width: 330px;
+    }
+    h4 {
+        font-size: 1.4em;
+        font-weight: 600;
+        margin: 10px 0 0 0;
+    }
+    p {
+        font-weight: 300;
+        font-size: .95em;
+        max-width: 600px;
+        text-align: center;
+        line-height: 1.3em;
+    }
+    button {
+        margin-top: 20px;
+        background-color: $green_primary;
+    }
+}
+
 
 
 @keyframes ScaleInOut {
@@ -83,37 +114,4 @@ button {
     100% {
         transform: scale(1.5);
     }
-}
-
-
-.error {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: $green_primary;
-    margin-top: 5vh;
-
-    img {
-        width: 300px;
-    }
-
-    h4 {
-        font-size: 1.2em;
-        // font-weight: 500;
-        margin: 10px 0 0 0;
-    }
-
-    p {
-        font-weight: 300;
-        font-size: .95em;
-        max-width: 600px;
-        text-align: center;
-    }
-
-    button {
-        margin-top: 20px;
-    }
-
 }

@@ -12,6 +12,5 @@ import advice from "@/utils/mocks/advice.mock.json"
         <span>John Doe, expert</span>
       </div>
     </div>
-    
   </div>
 </template>
