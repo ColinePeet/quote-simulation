@@ -1,4 +1,5 @@
 <script setup>
+import informations from "@/utils/mocks/informations.mock.json";
 import { defineProps, ref } from "vue";
 import { useStore } from "vuex";
 
@@ -37,6 +38,13 @@ const selectFormula = function (key) {
         @click="selectFormula(formula.key)"
       >
         <span>{{ formula.name }}</span>
+      </div>
+    </div>
+
+    <div class="englobe-infos">
+      <button class="info">?</button>
+      <div class="description-box">
+        <p v-html="informations[props.formula]"></p>
       </div>
     </div>
   </div>

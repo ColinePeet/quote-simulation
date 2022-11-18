@@ -1,5 +1,7 @@
 <script setup>
 import advice from "@/utils/mocks/advice.mock.json"
+
+//* todo later : get advice from request 
 </script>
 
 <template>
