@@ -46,7 +46,9 @@ import user from "@/utils/mocks/user.mock.json";
 
 
       <label>Vos codes NACE-BEL:</label>
-      <br>{{user.nacebelCodes}}
+      <div class="flex">
+        <div v-for="code in user.nacebelCodes" :key="code" class="field">{{code}}</div>
+      </div>
     </form>
   </div>
 </template>
