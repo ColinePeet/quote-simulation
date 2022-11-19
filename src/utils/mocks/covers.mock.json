@@ -29,8 +29,8 @@
     },
     {
         "key" : "legalExpenses",
-        "name" : "Frais judiciaires",
-        "description": "La couverture frais judiciaires lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquid, id exercitationem perspiciatis vero eligendi voluptas sint fugit alias unde harum nemo.",
+        "name" : "Frais juridiques",
+        "description": "La couverture frais juridiques lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquid, id exercitationem perspiciatis vero eligendi voluptas sint fugit alias unde harum nemo.",
         "type" : "additional",
         "selected": false
     }

@@ -6,7 +6,7 @@ import SelectFormula from "@/components/atoms/SelectFormula";
   <div class="controls-formulas">
     <SelectFormula :label="`Franchise`" :formula="`deductibleFormula`" />
     <SelectFormula
-      :label="`Couverture de plafond`"
+      :label="`Plafond de couverture`"
       :formula="`coverageCeilingFormula`"
     />
   </div>

@@ -18,7 +18,7 @@ import user from "@/utils/mocks/user.mock.json";
       <label>Le nom de votre entreprise:</label>
       <input type="text" v-model="user.legalName" disabled />
 
-      <label>Êtes-vous une personne morale ?</label>
+      <label>Êtes-vous une personne physique ?</label>
       <div class="checkbox-field">
         <input
           type="radio"
@@ -36,7 +36,7 @@ import user from "@/utils/mocks/user.mock.json";
           v-model="user.naturalPerson"
           disabled
         />
-        <label for="false">Non, je suis une personne juridique</label>
+        <label for="false">Non, je suis une personne morale</label>
       </div>
 
       <label>Vos codes NACE-BEL:</label>

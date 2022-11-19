@@ -60,13 +60,13 @@ onMounted(() => {
     <div v-if="store.state.quote" class="englobe-quote">
       <CoverageDeductiblePrices />
 
-      <h1>Votre devis RC Pro</h1>
+      <h1>Votre devis RC Professionnelle</h1>
       <EnglobeCovers />
 
       <TotalPrice />
     </div>
     <button v-if="store.state.quote">
-      Me souscrire à l'assurance<i class="material-icons">play_arrow</i>
+      Souscrire à l'assurance<i class="material-icons">play_arrow</i>
     </button>
 
     <LoaderElement v-if="loading" />
