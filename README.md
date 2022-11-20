@@ -29,31 +29,40 @@ npm run lint
 2. Advice 
 3. Quote simulation
 
-+ explain uses case
+### Story case :
+_A doctor need to buy a insurance RC Pro contract. The doctor has already enter all her informations in a form on the website and she get a response from the API with a quote calculated based on her informations. 
+The quote contains the differents covers, the deductible and the coverage ceiling. The doctor also received an advice from the backend based on her informations for the deductible and coverage ceiling formulas are best fort her and what covers she sould subscribe.
+She can change the deductible and coverage ceiling formulas to get new prices and she can select / unselect covers that will change the total price of the quote._
 
 ## 📐 Project architecture
+from the `src` folder
+
+### Assets
+#### img
+#### sass
+All the project style, splited as scss files depending on their use. Each file has their use explained and commented.
 
 ### Components
 Components organized in Atomic Design Pattern (see [Documentation](https://atomicdesign.bradfrost.com/chapter-2/)). 
-
-The 3 principals features are splited as organisms components.
+The 3 principals features (user profile, quote & advice simulation) are splited as organisms components.
 
 ### Store
-The store includes : 
-- State : to store the datas
-- Getters 
-- Actions : for the requests
+The store includes :
+- State : datas stored (quote, etc.)
+- Getters : computed properties stored (total price, etc.)
+- Actions : requests (fetch quote)
 - Mutations : to manage the datas stored 
 
-### Utils/Mocks
+### Utils
+#### Mocks
 All the mocks json files
-- Advice 🚧 (advice simulation from the backend)
-- Covers details 🚧 (details of each cover : description, french name, etc.)
-- Coverage & deductible informations (description & french name)
-- User payload 🚧 (user informations)
+- Advice (advice simulation from the backend) 🚧* 
+- Covers (static informations of each cover : description, french name, etc.) 🚧*
+- Deductible & coverage ceiling (static informations : description & french name)
+- User informations (user payload) 🚧*
 
 
-## 🚧 To do later / to think about
-- Advice : we should have a request to get the advice response from the back (documentation needed, route, response, etc.)
-- Covers details : should we keep all theses informations on the front side ? 
-- User payload : dynamic form to do on the front.
+## 🚧 To improve
+- *Advice: we should have a request to get the advice response from the back (documentation needed, route, response, etc.)
+- *Covers: should we keep all theses informations on the front side? 
+- *User informations: should be a dynamic form.
