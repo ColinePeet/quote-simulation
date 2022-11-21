@@ -57,6 +57,8 @@ let showProfile = ref(true)
           </div>
         </div>
       </div>
+
+      <button disabled><i class="material-icons">play_arrow</i> Modifier mes informations</button>
     </form>
 
     <button class="toggle-profile" @click="showProfile = !showProfile"><i class="material-icons">{{showProfile ? 'chevron_left' : 'chevron_right'}}</i></button>
