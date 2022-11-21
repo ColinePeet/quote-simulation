@@ -8,9 +8,10 @@ import AdviceSimulation from "@/components/organisms/AdviceSimulation.vue";
 <template>
   <div id="template">
     <UserProfile />
+    <AdviceSimulation />
     <ControlsFormulas />
     <QuoteSimulation />
-    <AdviceSimulation />
+    
   </div>
 </template>
 
