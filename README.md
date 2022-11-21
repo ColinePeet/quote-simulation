@@ -65,4 +65,8 @@ All the mocks json files
 ## 🚧 To improve
 - *Advice: we should have a request to get the advice response from the back (documentation needed, route, response, etc.)
 - *Covers: should we keep all theses informations on the front side? 
-- *User informations: should be a dynamic form.
+- *User informations: dynamic form
+- Testing implementation
+
+## Deployed Project 
+https://quote-simulation.netlify.app/
