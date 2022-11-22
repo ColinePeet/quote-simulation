@@ -67,5 +67,5 @@ All the mocks json files
 - *User informations: dynamic form
 - Testing to implement
 
-## Deployed Project 
+## ✨ Deployed Project 
 https://quote-simulation.netlify.app/
