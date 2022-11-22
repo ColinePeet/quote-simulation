@@ -25,25 +25,24 @@ npm run lint
 
 ## ✅ Features
 
-1. User Information
+1. User profile
 2. Advice 
 3. Quote simulation
 
 ### Story case :
 _A doctor need to buy a insurance RC Pro contract. The doctor has already enter all her informations in a form on the website and she get a response from the API with a quote calculated based on her informations. 
-The quote contains the differents covers, the deductible and the coverage ceiling. The doctor also received an advice from the backend based on her informations for the deductible and coverage ceiling formulas are best fort her and what covers she sould subscribe.
+The quote contains the differents covers, the deductible and the coverage ceiling. The doctor also received an advice from the backend for the best deductible and coverage ceiling formulas for her and what covers she sould subscribe based on her informations.
 She can change the deductible and coverage ceiling formulas to get new prices and she can select / unselect covers that will change the total price of the quote._
 
 ## 📐 Project architecture
 from the `src` folder
 
 ### Assets
-#### img
 #### sass
 All the project style, splited as scss files depending on their use. Each file has their use explained and commented.
 
 ### Components
-Components organized in Atomic Design Pattern (see [Documentation](https://atomicdesign.bradfrost.com/chapter-2/)). 
+Components organized in Atomic Design Pattern ([see documentation](https://atomicdesign.bradfrost.com/chapter-2/)). 
 The 3 principals features (user profile, quote & advice simulation) are splited as organisms components.
 
 ### Store
@@ -66,7 +65,7 @@ All the mocks json files
 - *Advice: we should have a request to get the advice response from the back (documentation needed, route, response, etc.)
 - *Covers: should we keep all theses informations on the front side? 
 - *User informations: dynamic form
-- Testing implementation
+- Testing to implement
 
 ## Deployed Project 
 https://quote-simulation.netlify.app/
